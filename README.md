@@ -1,4 +1,4 @@
-# plagiarismDetectionWORD2VEC
+# PlagiarismDetection with a WORD2VEC implementation
 An explorative / examplary implementation of a plagiarism detection using the word2vec implementation of spaCy
 
 Author: Laura H.
