@@ -48,13 +48,13 @@ indication that sentences are very much alike. Like a plagiarised sentence would
 Maybe slightly altered, but in essence the same. 
 Therefore, this would be my suggestion to start with if looking for possible plagiarisms.
 
-###Prerequest for WIKIPLAG
+### Prerequest for WIKIPLAG
 1. A table in the Cassandra database with:
 * sentenceID
 * sentence
 * title/ID of article the sentence belongs to
 
-###Algorithm
+### Algorithm
 0. Possibly TF-IDF for speedup
 1. Split the text which is to analyse (TextToAnalyse) into sentences 
 (for example by using a [Sentence Iterator](https://deeplearning4j.org/sentenceiterator) 
@@ -65,7 +65,7 @@ by using the cosine similarity function
 3. If similarity > 0.9 => likely to be a very similar sentence, possible plagiarism.
 4. List/Map possible plagiarisms, show to user as possible plagiarisms.
 
-##Implementation
+## Implementation
 There is no need to implement Word2Vec and the necessary functions from scratch, since 
 there are some pretty cool libraries in multiple languages.
 
@@ -81,7 +81,7 @@ For Java/Scala, there is a library deeplearning4j (dl4j) and nd4j
 WIKIPLAG: I recommend to build this in a separate project (micro service), 
 since the dependencies of dl4j and nd4j are not compatible with the current project (sbt). 
 
-##Speeding up the process with TF-IDF
+## Speeding up the process with TF-IDF
 Comparing all sentences from the text to analyse with all sentences in the wiki database requires 
 a lot of computing resources. 
 Therefore, is seems like an good idea to filter relevant wiki articles first.
@@ -102,7 +102,7 @@ Pick the top-5 (or any other number that works best.. trail and error here)
 of words with the highest TF-IDF scores, 
 and continue with step 1 of the algorithm as described above.
 
-##Literature
+## Literature
   
 1. A. Caliskan, J. J. Bryson, and A. Narayanan, “Semantics derived automatically
     from language corpora contain human-like biases,” in Science, vol. 356, pp. 183–186.
